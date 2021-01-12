@@ -3,7 +3,7 @@
 
 Let's create an ES2015 class to represent SMS text messages!
 
-Define an ES2015 class named `SMS` containing a constructor method that 
+Define an ES2015 class named `SMS` containing a constructor method that
 accepts three arguments that initialize the following properties:
 
 * recipient - the recipient of the text message
@@ -17,31 +17,37 @@ Node.js with the examples below. Use the command:
 
 Examples:
 
-const message1 = new SMS('555-111-1111', '555-222-2222', 'Test message one');
-console.log(message1);
 
 // Should print...
 
 // SMS {
-//   recipient: '555-111-1111',
-//   sender: '555-222-2222',
-//   text: 'Test message one'
-// }
+  //   recipient: '555-111-1111',
+  //   sender: '555-222-2222',
+  //   text: 'Test message one'
+  // }
 
-const message2 = new SMS('555-333-3333', '555-444-4444', 'Test message two');
-console.log(message2);
+  const message2 = new SMS('555-333-3333', '555-444-4444', 'Test message two');
+  console.log(message2);
 
-// Should print...
+  // Should print...
 
-// SMS {
-//   recipient: '555-333-3333',
-//   sender: '555-444-4444',
-//   text: 'Test message two'
-// }
+  // SMS {
+    //   recipient: '555-333-3333',
+    //   sender: '555-444-4444',
+    //   text: 'Test message two'
+    // }
 
-***********************************************************************/
+    ***********************************************************************/
+   class SMS {
+     constructor(recipient, sender, text) {
+       this.recipient = recipient
+       this.sender = sender
+       this.text = text
+      }
+    }
 
-
+    const message1 = new SMS('555-111-1111', '555-222-2222', 'Test message one');
+    console.log(message1);
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

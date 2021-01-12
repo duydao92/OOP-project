@@ -22,36 +22,26 @@ Node.js with the examples below. Use the command:
 
 Example:
 
-const instance1 = new MMS('555-111-1111', '555-222-2222', 
-  'This is a test message.', 'image/gif');
-const instance2 = new MMS('555-111-1111', '555-222-2222', 
-  'This is a second test message.', 'image/gif');
-const instance3 = new MMS('555-111-1111', '555-222-2222', 
-  'This is a third test message.', 'image/jpeg');
 
-const messages = [instance1, instance2, instance3];
-const filteredMessages = MMS.getMessagesByMIMEType(messages, 'image/gif');
-
-console.log(filteredMessages);
 
 // Should print...
 
 // [
 //   MMS {
-//     recipient: '555-111-1111',
-//     sender: '555-222-2222',
-//     text: 'This is a test message.',
-//     mimeType: 'image/gif'
-//   },
-//   MMS {
-//     recipient: '555-111-1111',
-//     sender: '555-222-2222',
-//     text: 'This is a second test message.',
-//     mimeType: 'image/gif'
-//   }
-// ]
+  //     recipient: '555-111-1111',
+  //     sender: '555-222-2222',
+  //     text: 'This is a test message.',
+  //     mimeType: 'image/gif'
+  //   },
+  //   MMS {
+    //     recipient: '555-111-1111',
+    //     sender: '555-222-2222',
+    //     text: 'This is a second test message.',
+    //     mimeType: 'image/gif'
+    //   }
+    // ]
 
-***********************************************************************/
+    ***********************************************************************/
 
 class MMS {
   constructor(recipient, sender, text, mimeType) {
@@ -60,7 +50,25 @@ class MMS {
     this.text = text;
     this.mimeType = mimeType;
   }
+
+static getMessagesByMIMEType(messages, mimeType) {
+  return messages.filter(function (message) {
+    return message.mimeType === mimeType
+    })
+  }
 }
+
+const instance1 = new MMS('555-111-1111', '555-222-2222',
+'This is a test message.', 'image/gif');
+const instance2 = new MMS('555-111-1111', '555-222-2222',
+'This is a second test message.', 'image/gif');
+const instance3 = new MMS('555-111-1111', '555-222-2222',
+'This is a third test message.', 'image/jpeg');
+
+const messages = [instance1, instance2, instance3];
+const filteredMessages = MMS.getMessagesByMIMEType(messages, 'image/gif');
+
+console.log(filteredMessages);
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
