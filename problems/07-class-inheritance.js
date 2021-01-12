@@ -23,50 +23,50 @@ Node.js with the examples below. Use the command:
 
 Examples:
 
-const message1 = new Email('sally@smith.com', 'john@smith.com',
-  'Test Message One', 'This is a test message.');
-console.log(message1);
 
 // Should print...
 
 // Email {
-//   recipient: 'sally@smith.com',
-//   sender: 'john@smith.com',
-//   text: 'This is a test message.',
-//   subject: 'Test Message One'
-// }
+  //   recipient: 'sally@smith.com',
+  //   sender: 'john@smith.com',
+  //   text: 'This is a test message.',
+  //   subject: 'Test Message One'
+  // }
 
-const message2 = new Email('sally@smith.com', 'john@smith.com',
+  const message2 = new Email('sally@smith.com', 'john@smith.com',
   'Test Message Two', 'This is a test message.');
-console.log(message2);
+  console.log(message2);
 
-// Should print...
+  // Should print...
 
-// Email {
-//   recipient: 'sally@smith.com',
-//   sender: 'john@smith.com',
-//   text: 'This is a test message.',
-//   subject: 'Test Message Two'
-// }
+  // Email {
+    //   recipient: 'sally@smith.com',
+    //   sender: 'john@smith.com',
+    //   text: 'This is a test message.',
+    //   subject: 'Test Message Two'
+    // }
 
-***********************************************************************/
+    ***********************************************************************/
 
-class Message {
-  constructor(recipient, sender, text) {
-    this.recipient = recipient;
-    this.sender = sender;
-    this.text = text;
-  }
-}
+   class Message {
+     constructor(recipient, sender, text) {
+       this.recipient = recipient;
+       this.sender = sender;
+       this.text = text;
+      }
+    }
 
-class Email extends Message {
-  constructor (recipient, sender, subject, text) {
-    super(recipient, sender, text)
-    this.subject = subject
-  }
-}
+    class Email extends Message {
+      constructor (recipient, sender, subject, text) {
+        super(recipient, sender, text)
+        this.subject = subject
+      }
+    }
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
+    const message1 = new Email('sally@smith.com', 'john@smith.com',
+      'Test Message One', 'This is a test message.');
+    console.log(message1);
+    /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = {
     Message,
